@@ -20,7 +20,16 @@ $slice = array_slice($posts, $offset, $limit);
 $result = [];
 foreach ($slice as $post) {
     $author = getUserById($post['user_id']);
-    if (!$author) continue;
+    
+    // Handle deleted user: show post with placeholder author info
+    if (!$author) {
+        $author = [
+            'id'        => $post['user_id'],
+            'username'  => '[Người dùng đã xóa]',
+            'avatar'    => 'assets/images/default-avatar.svg',
+            'level'     => 1,
+        ];
+    }
 
     $likes    = $post['likes'] ?? [];
     $liked    = $user ? in_array($user['id'], $likes) : false;

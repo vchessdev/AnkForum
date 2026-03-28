@@ -31,7 +31,18 @@ foreach ($all as $c) {
 }
 
 function buildComment(array $c, array $replies, ?array $user): array {
-    $author  = getUserById($c['user_id']);
+    $author = getUserById($c['user_id']);
+    
+    // Handle deleted user
+    if (!$author) {
+        $author = [
+            'id'     => $c['user_id'],
+            'username' => '[Người dùng đã xóa]',
+            'avatar' => 'assets/images/default-avatar.svg',
+            'level'  => 1,
+        ];
+    }
+    
     $lvlInfo = getLevelInfo($author['level'] ?? 1);
     $childReplies = [];
     foreach ($replies[$c['id']] ?? [] as $r) {
@@ -48,10 +59,10 @@ function buildComment(array $c, array $replies, ?array $user): array {
         'is_owner'   => $user && $user['id'] === $c['user_id'],
         'replies'    => $childReplies,
         'author' => [
-            'id'         => $author['id'] ?? '',
-            'username'   => $author['username'] ?? 'Đã xóa',
-            'avatar'     => avatarUrl($author['avatar'] ?? null),
-            'level'      => $author['level'] ?? 1,
+            'id'         => $author['id'],
+            'username'   => $author['username'],
+            'avatar'     => avatarUrl($author['avatar']),
+            'level'      => $author['level'],
             'level_info' => $lvlInfo,
         ],
     ];

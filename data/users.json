@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "id": "ub25ea27dfeee5ba5",
+        "username": "admin",
+        "email": "dev@astraa.hs.vc",
+        "password": "$2y$12$0KOdsCPLUxmDLQI8Tlrif.1EDgBU.bwwQeJr.DHbDDN7B\/ixAHDCS",
+        "avatar": "uploads\/avatars\/225a8eff392003c4.png",
+        "banner": "default.jpg",
+        "bio": "Á đù anh tanh!",
+        "level": 10,
+        "points": 10000000000034,
+        "followers": [],
+        "following": [
+            "u0d92ffca277c1147"
+        ],
+        "is_online": true,
+        "last_seen": "2026-03-28 21:43:59",
+        "created_at": "2026-03-28 21:43:59"
+    },
+    {
+        "id": "u0d92ffca277c1147",
+        "username": "lina141141",
+        "email": "luonglinh213684@gmail.com",
+        "password": "$2y$12$2mL6v9C10SruqbpPVcTgkumsUPzqS2RM5ZebGNRJQo7mSOtl21I1a",
+        "avatar": "uploads\/avatars\/63fc54cc9213c725.jpg",
+        "banner": "default.jpg",
+        "bio": "",
+        "level": 1,
+        "points": 3,
+        "followers": [
+            "ub25ea27dfeee5ba5"
+        ],
+        "following": [],
+        "is_online": true,
+        "last_seen": "2026-03-28 21:52:49",
+        "created_at": "2026-03-28 21:52:49"
+    }
+]
