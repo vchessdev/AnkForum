@@ -159,12 +159,25 @@ $csrfToken = csrfToken();
         <source src="assets/sounds/notification.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Core JS -->
+     <!-- Core JS -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/ajax.js"></script>
 
     <?php if (isLoggedIn()): ?>
     <script src="assets/js/notifications.js"></script>
+    <?php endif; ?>
+
+    <!-- Init feed on home page -->
+    <?php if ($page === 'home'): ?>
+    <script>
+        if (typeof loadFeed === 'function') {
+            loadFeed();
+            if (typeof InfiniteScroll !== 'undefined') {
+                InfiniteScroll.observe();
+                InfiniteScroll.onLoad(() => loadFeed());
+            }
+        }
+    </script>
     <?php endif; ?>
 </body>
 </html>

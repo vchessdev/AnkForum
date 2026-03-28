@@ -403,8 +403,4 @@ document.getElementById('compose-modal')?.addEventListener('click', function(e) 
     if (e.target === this) this.style.display = 'none';
 });
 
-// Init feed + infinite scroll
-loadFeed();
-InfiniteScroll.observe();
-InfiniteScroll.onLoad(() => loadFeed());
 </script>
