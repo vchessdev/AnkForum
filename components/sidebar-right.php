@@ -14,6 +14,41 @@ $topUsers = array_slice($users, 0, 5);
 ?>
 <div class="w-full h-full overflow-y-auto px-3 py-4 space-y-4">
 
+    <!-- User Profile Card (when logged in) -->
+    <?php $user = currentUser(); ?>
+    <?php if ($user): ?>
+    <div class="glass-card p-4 bg-gradient-to-br from-brand-500/10 to-purple-500/10 border border-brand-500/20">
+        <div class="flex items-center gap-3 mb-4">
+            <img src="<?php echo avatarUrl($user['avatar']); ?>"
+                 alt="<?php echo sanitize($user['username']); ?>"
+                 class="avatar w-12 h-12">
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-white truncate"><?php echo sanitize($user['username']); ?></p>
+                <?php $lvl = getLevelInfo($user['level'] ?? 1); ?>
+                <p class="text-xs" style="color:<?php echo $lvl['color']; ?>"><?php echo $lvl['icon']; ?> Lv.<?php echo $user['level']; ?></p>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-2 mb-3 text-center">
+            <div class="bg-slate-700/50 rounded p-2">
+                <p class="text-xs text-slate-400">Điểm</p>
+                <p class="text-sm font-bold text-white"><?php echo number_format($user['points'] ?? 0); ?></p>
+            </div>
+            <div class="bg-slate-700/50 rounded p-2">
+                <p class="text-xs text-slate-400">Bài viết</p>
+                <p class="text-sm font-bold text-white"><?php echo count(array_filter(readJson(POSTS_FILE), fn($p) => $p['user_id'] === $user['id'])); ?></p>
+            </div>
+            <div class="bg-slate-700/50 rounded p-2">
+                <p class="text-xs text-slate-400">Theo dõi</p>
+                <p class="text-sm font-bold text-white"><?php echo count($user['following'] ?? []); ?></p>
+            </div>
+        </div>
+        <a href="/?page=profile&u=<?php echo urlencode($user['username']); ?>"
+           class="block w-full py-2 px-3 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold rounded text-center transition">
+            Xem Profile
+        </a>
+    </div>
+    <?php endif; ?>
+
     <!-- Online users -->
     <?php
     $onlineUsers = array_filter($users, fn($u) =>
