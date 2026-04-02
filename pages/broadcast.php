@@ -116,6 +116,11 @@ foreach ($livestreams as $stream) {
 
                     <!-- Controls -->
                     <div class="flex gap-4">
+                        <button type="button" id="screen-share-btn" onclick="toggleScreenShare('<?php echo $activeStream['id']; ?>')"
+                                class="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition flex items-center justify-center gap-2">
+                            <span id="screen-share-icon">📺</span>
+                            <span id="screen-share-text">Chia sẻ màn hình</span>
+                        </button>
                         <button type="button" onclick="endStreamNow('<?php echo $activeStream['id']; ?>')"
                                 class="flex-1 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition">
                             Kết thúc Stream
@@ -235,4 +240,84 @@ setInterval(() => {
     document.getElementById('stream-duration').textContent = duration;
 }, 1000);
 <?php endif; ?>
+
+// Screen sharing toggle
+let screenStream = null;
+let isScreenShareActive = false;
+
+async function toggleScreenShare(streamId) {
+    try {
+        if (isScreenShareActive) {
+            // Stop screen sharing
+            if (screenStream) {
+                screenStream.getTracks().forEach(track => track.stop());
+            }
+            isScreenShareActive = false;
+            
+            // Notify server
+            await fetch('/api/livestreams/toggle-screen-share.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    stream_id: streamId,
+                    enable_screen_share: 'false',
+                    csrf: '<?php echo csrfToken(); ?>'
+                })
+            });
+            
+            // Update UI
+            document.getElementById('screen-share-btn').classList.remove('bg-green-600', 'hover:bg-green-700');
+            document.getElementById('screen-share-btn').classList.add('bg-blue-600', 'hover:bg-blue-700');
+            document.getElementById('screen-share-text').textContent = 'Chia sẻ màn hình';
+            document.getElementById('screen-share-icon').textContent = '📺';
+            showMessage('Đã dừng chia sẻ màn hình', 'success');
+            return;
+        }
+        
+        // Start screen sharing
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+            showMessage('Trình duyệt không hỗ trợ chia sẻ màn hình', 'error');
+            return;
+        }
+        
+        screenStream = await navigator.mediaDevices.getDisplayMedia({
+            video: { 
+                cursor: 'always',
+                displaySurface: 'monitor'
+            },
+            audio: false
+        });
+        
+        isScreenShareActive = true;
+        
+        // Handle when user stops sharing from system menu
+        screenStream.getTracks()[0].onended = () => {
+            toggleScreenShare(streamId);
+        };
+        
+        // Notify server
+        await fetch('/api/livestreams/toggle-screen-share.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                stream_id: streamId,
+                enable_screen_share: 'true',
+                csrf: '<?php echo csrfToken(); ?>'
+            })
+        });
+        
+        // Update UI
+        document.getElementById('screen-share-btn').classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        document.getElementById('screen-share-btn').classList.add('bg-green-600', 'hover:bg-green-700');
+        document.getElementById('screen-share-text').textContent = 'Dừng chia sẻ màn hình';
+        document.getElementById('screen-share-icon').textContent = '✅';
+        showMessage('Bắt đầu chia sẻ màn hình thành công', 'success');
+        
+    } catch (error) {
+        if (error.name !== 'NotAllowedError') {
+            showMessage('Lỗi: ' + error.message, 'error');
+        }
+        // User cancelled - do nothing
+    }
+}
 </script>

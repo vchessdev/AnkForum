@@ -460,6 +460,11 @@ async function loadLivestreams() {
                     <div class="absolute top-2 right-2 bg-red-600 px-2 py-1 rounded text-xs font-bold text-white animate-pulse">
                         LIVE
                     </div>
+                    ${stream.screen_sharing_enabled ? `
+                        <div class="absolute bottom-2 left-2 bg-blue-600 px-2 py-1 rounded text-xs font-bold text-white flex items-center gap-1">
+                            📺 Screen Share
+                        </div>
+                    ` : ''}
                 </div>
                 <div class="p-3">
                     <h4 class="font-semibold text-white text-sm truncate">${escHtml(stream.title)}</h4>

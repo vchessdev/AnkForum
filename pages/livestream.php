@@ -58,6 +58,13 @@ $isLive = $stream['status'] === 'live';
                         </div>
                     <?php endif; ?>
                     
+                    <!-- Screen Share Indicator -->
+                    <?php if (!empty($stream['screen_sharing_enabled']) && $stream['screen_sharing_enabled']): ?>
+                        <div class="absolute top-4 left-4 flex items-center gap-2 px-3 py-2 bg-blue-600 rounded animate-pulse">
+                            <span class="text-white text-sm font-semibold">📺 Chia sẻ màn hình</span>
+                        </div>
+                    <?php endif; ?>
+                    
                     <!-- Viewer Count -->
                     <div class="absolute bottom-4 left-4 text-white text-sm">
                         👥 <?php echo number_format($stream['viewer_count']); ?> đang xem
@@ -216,7 +223,16 @@ setInterval(() => {
         if (data.stream) {
             const chat = document.getElementById('livestream-chat');
             const latestComments = data.stream.comments.slice(-20);
-            // You can update chat here
+            
+            // Check screen share status
+            const screenShareIndicator = document.getElementById('screen-share-status');
+            if (data.stream.screen_sharing_enabled && screenShareIndicator) {
+                if (screenShareIndicator.style.display === 'none') {
+                    screenShareIndicator.style.display = 'flex';
+                }
+            } else if (screenShareIndicator) {
+                screenShareIndicator.style.display = 'none';
+            }
         }
     });
 }, 3000);
