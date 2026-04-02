@@ -175,3 +175,96 @@
                     READY? LET'S GO! 🚀
                     
 ═══════════════════════════════════════════════════════════════════════
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                     🎥 CHIA SẺ MÀN HÌNH (SCREEN SHARE)                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+📺 QUICK GUIDE - Chia Sẻ Màn Hình Khi Livestream
+
+
+BƯỚC 1: BẮT ĐẦU PHÁT TRỰC TIẾP
+───────────────────────────────────────────────────────────────────────────
+  1. Vào: /?page=broadcast
+  2. Nhập tiêu đề stream
+  3. Nhấp "🔴 Bắt đầu phát trực tiếp"
+  ✅ Stream bắt đầu
+
+
+BƯỚC 2: CHIA SẺ MÀN HÌNH
+───────────────────────────────────────────────────────────────────────────
+  1. Nhấp nút "📺 Chia sẻ màn hình" (xanh dương)
+  2. Chọn Monitor hoặc Window
+  3. Nhấp "Chia sẻ" để xác nhận
+  ✅ Màn hình được chia sẻ
+
+
+BƯỚC 3: NGƯỜI XEM
+───────────────────────────────────────────────────────────────────────────
+  Người xem sẽ thấy:
+    🔴 LIVE badge (red)
+    📺 Chia sẻ màn hình (blue, nếu đang chia sẻ)
+    Màn hình của bạn
+
+
+BƯỚC 4: DỪNG CHIA SẺ
+───────────────────────────────────────────────────────────────────────────
+  Lựa chọn 1: Nhấp "✅ Dừng chia sẻ màn hình" (xanh lá)
+  Lựa chọn 2: Dùng menu hệ thống (Windows/Mac stop sharing)
+  ✅ Chia sẻ dừng (stream vẫn chạy)
+
+
+BƯỚC 5: KẾT THÚC STREAM
+───────────────────────────────────────────────────────────────────────────
+  1. Nhấp "Kết thúc Stream"
+  2. Confirm
+  ✅ Stream kết thúc
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+
+💡 MẸO
+
+  ✓ Chọn cửa sổ ứng dụng để tránh lộ file nhạy cảm
+  ✓ Dừng chia sẻ khi không cần (tiết kiệm băng thông)
+  ✓ Kiểm tra desktop trước khi chia sẻ màn hình
+  ✓ Dùng Chrome/Edge để hiệu suất tốt nhất
+
+
+⚠️ CHÚ Ý
+
+  • Chia sẻ là video CHỈ XEM (không thể điều khiển từ xa)
+  • Âm thanh không được chia sẻ
+  • Con trỏ chuột CÓ được hiển thị cho người xem
+  • Một lần chỉ chia sẻ một màn hình
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+
+🔧 TRÌNH DUYỆT HỖ TRỢ
+
+  ✅ Chrome 72+
+  ✅ Firefox 66+
+  ✅ Edge 79+
+  ✅ Safari 13+ (macOS)
+  ✅ Opera 60+
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+
+🏃 FLOW NHANH - Streaming Game
+
+  1. /?page=broadcast
+  2. Tiêu đề: "Gaming: Elden Ring"
+  3. "🔴 Bắt đầu"
+  4. "📺 Chia sẻ màn hình" → Chọn Monitor
+  5. Chơi game
+  6. Chat với viewers
+  7. "✅ Dừng chia sẻ" (khi muốn)
+  8. "Kết thúc Stream"
+

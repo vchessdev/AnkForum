@@ -432,3 +432,181 @@ Cách fix:
 **Enjoy AnkForum mới! 🎉**
 
 Questions? 👉 Hỏi admin hoặc comment trên forum!
+
+---
+
+## 📺 Tính Năng Chia Sẻ Màn Hình (Screen Sharing)
+
+### Giới Thiệu
+Khi đang phát trực tiếp, bạn có thể chia sẻ màn hình của mình với người xem. Tính năng này rất hữu ích cho:
+- Hướng dẫn sử dụng phần mềm
+- Trình chiếu
+- Chia sẻ tài liệu
+- Streaming games
+- Hội thảo trực tuyến
+
+### Cách Sử Dụng
+
+#### Cho Người Phát (Streamer)
+
+1. **Bắt đầu phát trực tiếp**
+   - Vào trang "Phát trực tiếp" (/?page=broadcast)
+   - Nhấp "🔴 Bắt đầu phát trực tiếp"
+   - Nhập tiêu đề và mô tả
+   - Nhấp "Bắt đầu"
+
+2. **Chia sẻ màn hình**
+   - Khi stream đang chạy, nhấp nút "📺 Chia sẻ màn hình"
+   - Trình duyệt sẽ hiện hộp thoại chọn màn hình
+   - Chọn màn hình (Monitor) hoặc cửa sổ ứng dụng
+   - Nhấp "Chia sẻ" để xác nhận
+   - Nút sẽ chuyển sang màu xanh "✅ Dừng chia sẻ màn hình"
+
+3. **Dừng chia sẻ**
+   - Nhấp nút "✅ Dừng chia sẻ màn hình" (bây giờ xanh lá)
+   - Hoặc dừng từ menu hệ thống (Windows/Mac)
+   - Nút sẽ quay lại màu xanh dương "📺 Chia sẻ màn hình"
+
+#### Cho Người Xem (Viewer)
+
+1. **Xem livestream với screen sharing**
+   - Truy cập trang livestream (/?page=livestream&id=STREAM_ID)
+   - Nếu streamer đang chia sẻ màn hình, bạn sẽ thấy:
+     - Badge xanh "📺 Chia sẻ màn hình" ở góc trên trái
+     - Màn hình được chia sẻ sẽ hiển thị trong vùng video
+
+2. **Xem trong carousel trang chủ**
+   - Trên trang chủ, livestream có screen sharing sẽ có badge
+   - Badge "📺 Screen Share" ở góc dưới trái của thumbnail
+   - Nhấp để xem stream đầy đủ
+
+### Yêu Cầu & Tính Năng
+
+#### Trình Duyệt Hỗ Trợ
+- Chrome/Chromium 72+
+- Firefox 66+
+- Edge 79+
+- Safari 13+ (macOS)
+- Opera 60+
+
+#### Yêu Cầu Quyền
+- Trình duyệt sẽ yêu cầu quyền chia sẻ màn hình
+- Bạn phải cấp quyền để bắt đầu chia sẻ
+- Quyền được hỏi mỗi lần chia sẻ (an toàn)
+
+#### Tính Năng
+✅ Chia sẻ một hay nhiều màn hình
+✅ Chia sẻ cửa sổ ứng dụng cụ thể
+✅ Hiển thị con trỏ chuột cho người xem
+✅ Dừng tại bất kỳ lúc nào
+✅ Tự động phát hiện nếu người dùng dừng chia sẻ từ menu hệ thống
+
+### Hướng Dẫn Chi Tiết
+
+#### Windows
+1. Nhấp "📺 Chia sẻ màn hình"
+2. Chọn giữa:
+   - **Monitor**: Chia sẻ toàn bộ màn hình
+   - **Window**: Chia sẻ cửa sổ ứng dụng cụ thể
+3. Nhấp "Chia sẻ"
+4. Để dừng:
+   - Nhấp nút "✅ Dừng chia sẻ màn hình", HOẶC
+   - Nhấp icon dừng chia sẻ ở taskbar (Chrome/Edge)
+
+#### macOS
+1. Nhấp "📺 Chia sẻ màn hình"
+2. Chọn:
+   - **Entire Screen**: Chia sẻ toàn bộ
+   - **Window**: Chia sẻ cửa sổ
+3. Cho phép quyền truy cập nếu được hỏi
+4. Nhấp "Chia sẻ" để xác nhận
+5. Để dừng: Nhấp nút xanh "✅ Dừng chia sẻ màn hình"
+
+#### Linux
+1. Nhấp "📺 Chia sẻ màn hình"
+2. Chọn monitor hoặc cửa sổ
+3. Xác nhận quyền nếu cần
+4. Dừng bằng nút "✅ Dừng chia sẻ màn hình"
+
+### Ví Dụ Sử Dụng
+
+#### Ví Dụ 1: Hướng Dẫn Phần Mềm
+```
+1. Bắt đầu stream: "Hướng dẫn sử dụng Photoshop"
+2. Nhấp "Chia sẻ màn hình"
+3. Chọn cửa sổ Photoshop
+4. Hướng dẫn từng bước cho người xem
+5. Dừng khi xong: "Cảm ơn các bạn"
+6. Nhấp "Kết thúc Stream"
+```
+
+#### Ví Dụ 2: Streaming Game
+```
+1. Tạo stream: "Gaming Session - Elden Ring"
+2. Chia sẻ màn hình (chọn Monitor)
+3. Chơi game để người xem theo dõi
+4. Chat với người xem qua sidebar
+5. Dừng chia sẻ để chỉ hiển thị webcam (nếu có)
+6. Kết thúc stream khi xong
+```
+
+#### Ví Dụ 3: Hội Thảo Trực Tuyến
+```
+1. Stream: "Hội thảo: Kiếm tiền Online"
+2. Chia sẻ slides PowerPoint
+3. Trình chiếu toàn bộ (80 slides)
+4. Người xem tương tác qua chat
+5. Dừng chia sẻ, mở đàm thoại
+6. Kết thúc
+```
+
+### Lưu Ý Quan Trọng
+
+⚠️ **Quyền Riêng Tư**
+- Chia sẻ từng cửa sổ để tránh lộ thông tin nhạy cảm
+- Tối thiểu hóa cửa số background
+- Kiểm tra tất cả tab trình duyệt trước khi chia sẻ
+- Đóng thông báo nhạy cảm trước khi chia sẻ
+
+⚠️ **Hiệu Suất**
+- Chia sẻ màn hình tiêu tốn nhiều tài nguyên
+- Đóng các ứng dụng nặng khác
+- Giảm chất lượng video nếu lag
+- Kiểm tra độ mạnh kết nối Internet
+
+⚠️ **Kỹ Thuật**
+- Một lần chỉ chia sẻ một màn hình/cửa sổ
+- Người xem thấy con trỏ chuột của bạn
+- Âm thanh không được chia sẻ (chỉ là chứng chỉ)
+- Dừng chia sẻ sẽ không kết thúc stream
+
+### Xử Lý Sự Cố
+
+| Vấn Đề | Nguyên Nhân | Giải Pháp |
+|--------|-----------|----------|
+| Không thấy nút chia sẻ | Stream chưa bắt đầu | Bắt đầu stream trước |
+| Trình duyệt không yêu cầu quyền | Đã từ chối quyền | Đặt lại quyền trong Settings trình duyệt |
+| Chia sẻ bị dừng đột ngột | Lỗi kết nối | Kiểm tra Internet, thử lại |
+| Người xem không thấy | Màn hình chưa được chia sẻ | Bắt đầu chia sẻ again |
+| Giao diện chậm | Sử dụng quá nhiều tài nguyên | Đóng ứng dụng nặng |
+
+### FAQ
+
+**Q: Có giới hạn thời gian chia sẻ không?**
+A: Không. Bạn có thể chia sẻ lâu miễn là stream còn chạy.
+
+**Q: Người xem có thể điều khiển màn hình của tôi không?**
+A: Không, đây chỉ là xem không thể tương tác.
+
+**Q: Tôi có thể dừng chia sẻ mà không kết thúc stream không?**
+A: Có, nhấp nút "Dừng chia sẻ màn hình" để chỉ dừng chia sẻ, stream vẫn chạy.
+
+**Q: Âm thanh của màn hình chia sẻ có được ghi âm không?**
+A: Không, chỉ video được chia sẻ. Âm thanh từ OBS hoặc mixer.
+
+**Q: Tôi có thể chia sẻ nhiều màn hình không?**
+A: Một lần chỉ một, nhưng có thể chuyển đổi giữa các màn hình.
+
+**Q: Trình duyệt nào tốt nhất cho chia sẻ màn hình?**
+A: Chrome/Edge có hiệu suất tốt nhất. Firefox cũng ổn định.
+
