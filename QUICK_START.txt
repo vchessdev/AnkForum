@@ -1,0 +1,177 @@
+╔════════════════════════════════════════════════════════════════════╗
+║           🎉 ANKFORUM - HƯỚNG DẪN NHANH (QUICK START)            ║
+╚════════════════════════════════════════════════════════════════════╝
+
+┌─── 📊 TẠO POLL (BÌNH CHỌN) ──────────────────────────────────────┐
+│                                                                    │
+│  BƯỚC 1: Vào trang chủ                                           │
+│          → Tìm nút "📊 Poll" ở dưới post composer                │
+│                                                                    │
+│  BƯỚC 2: Điền thông tin                                          │
+│          ✎ Câu hỏi: "Bạn thích gì?"                            │
+│          ✎ Lựa chọn:                                             │
+│            • JavaScript                                            │
+│            • Python                                                │
+│            • Go                                                    │
+│                                                                    │
+│  BƯỚC 3: Tùy chọn                                                │
+│          ☐ Multiple choice (chọn nhiều)                         │
+│          📅 Hết hạn: 7 ngày                                      │
+│                                                                    │
+│  BƯỚC 4: Click "Tạo Poll"                                        │
+│          ✅ XONG! Poll đã được tạo                              │
+│                                                                    │
+│  SHARE: Mọi người có thể xem & bình chọn trên trang chủ         │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+┌─── 🔴 PHÁT LIVESTREAM (TRỰC TIẾP) ────────────────────────────────┐
+│                                                                    │
+│  BƯỚC 1: Vào trang broadcast                                     │
+│          → Nút "🔴 Livestream" ở trang chủ                      │
+│          → Hoặc: /?page=broadcast                                │
+│                                                                    │
+│  BƯỚC 2: Điền thông tin                                          │
+│          📝 Tiêu đề: "Tutorial Lập Trình Live"                 │
+│          📝 Mô tả: "Học JavaScript cơ bản"                      │
+│                                                                    │
+│  BƯỚC 3: Click "🔴 Bắt Đầu Phát Trực Tiếp"                     │
+│          ✅ Stream của bạn LIVE                                  │
+│                                                                    │
+│  BƯỚC 4: Share link                                              │
+│          📋 Copy URL từ dashboard                                │
+│          📤 Gửi cho bạn bè                                       │
+│                                                                    │
+│  BƯỚC 5: Kết thúc stream                                         │
+│          Click "Kết Thúc Stream" khi xong                        │
+│          ✅ Stream lưu trữ vĩnh viễn                            │
+│                                                                    │
+│  STATS: Thấy real-time:                                          │
+│         👥 Viewer count (số người xem)                          │
+│         ⏱️ Duration (thời gian phát)                            │
+│         💬 Comments (số bình luận)                               │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+┌─── 👀 XEM LIVESTREAM ──────────────────────────────────────────────┐
+│                                                                    │
+│  CÁCH 1: Từ trang chủ                                           │
+│          → Kéo xuống section "🔴 Đang Phát Trực Tiếp"          │
+│          → Click vào livestream muốn xem                         │
+│                                                                    │
+│  CÁCH 2: Từ trang Broadcasts                                    │
+│          → /?page=broadcasts                                     │
+│          → Chọn filter: Tất cả / 🔴 Đang phát / Đã kết thúc   │
+│          → Click stream                                           │
+│                                                                    │
+│  CHAT: Nhập tin nhắn ở khung chat bên phải                     │
+│        → Bấm gửi (hoặc Enter)                                    │
+│        → ✅ Tin nhắn hiển thị cho tất cả                        │
+│                                                                    │
+│  LƯU Ý: Phải đăng nhập mới chat được                           │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+┌─── 🗳️ BÌNH CHỌN TRÊN POLL ────────────────────────────────────────┐
+│                                                                    │
+│  BƯỚC 1: Tìm poll trên trang chủ hoặc /?page=polls             │
+│                                                                    │
+│  BƯỚC 2: Nhìn các lựa chọn                                       │
+│          JavaScript    ██████████ 60% (15 votes)                 │
+│          Python        ███████ 40% (10 votes)                    │
+│                                                                    │
+│  BƯỚC 3: Click vào lựa chọn bạn muốn                            │
+│                                                                    │
+│  BƯỚC 4: ✅ Xong! Bình chọn được ghi nhận                       │
+│          → Thấy ✓ "Bạn đã bình chọn"                           │
+│          → Kết quả cập nhật real-time                           │
+│                                                                    │
+│  LƯU Ý: Phải đăng nhập mới bình chọn được                      │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+┌─── 📸 UPLOAD HÌNH ────────────────────────────────────────────────┐
+│                                                                    │
+│  BƯỚC 1: Trang chủ → Click "📸 Ảnh/Video"                       │
+│                                                                    │
+│  BƯỚC 2: Chọn ảnh từ máy                                         │
+│          ✅ Được: JPG, PNG, GIF, WebP                           │
+│          ❌ Không: RAW, PSD, ...                                │
+│                                                                    │
+│  BƯỚC 3: Xem preview ảnh                                         │
+│                                                                    │
+│  BƯỚC 4: Viết caption (nội dung bài)                            │
+│                                                                    │
+│  BƯỚC 5: Click "Đăng" → ✅ XONG!                                │
+│                                                                    │
+│  GIỚI HẠN:                                                        │
+│  • Max 500MB / file                                              │
+│  • Max 10 files / bài viết                                       │
+│                                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════╗
+║                       🔴 LIVE BADGE INDICATOR                     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+  Khi bạn đang livestream:
+  
+  ┌─────────────────────┐
+  │ 🔴 LIVE             │ ← Biểu tượng ở navbar
+  │ (nhấp nháy/pulse)   │
+  └─────────────────────┘
+  
+  ✅ Báo hiệu cho mọi người: BẠN ĐANG PHÁT
+  ✅ Tự động biến mất khi stream kết thúc
+
+╔════════════════════════════════════════════════════════════════════╗
+║                    🔗 NEW PAGE SHORTCUTS                          ║
+╚════════════════════════════════════════════════════════════════════╝
+
+  📊 Create Poll:
+     /?page=create-poll
+
+  🔴 Broadcast Dashboard:
+     /?page=broadcast
+
+  👀 Watch Livestream:
+     /?page=livestream&id=STREAM_ID
+
+  📺 Browse All Streams:
+     /?page=broadcasts
+
+╔════════════════════════════════════════════════════════════════════╗
+║                      💡 USEFUL TIPS                               ║
+╚════════════════════════════════════════════════════════════════════╝
+
+  📊 POLL:
+     • Tiêu đề nên ngắn gọn (<20 từ)
+     • 2-4 lựa chọn là tốt nhất
+     • Hạn 7 ngày = kết quả tốt
+     • Multiple choice = survey mở
+
+  🔴 LIVESTREAM:
+     • Title rõ + keyword (dễ tìm)
+     • Test kết nối internet trước
+     • Chat với viewers = engagement cao
+     • Thông báo trước = viewers nhiều hơn
+
+  📸 UPLOAD:
+     • Ảnh <2MB tốt nhất
+     • JPG = ảnh chụp, PNG = transparency
+     • Thêm caption → mọi người thích hơn
+
+╔════════════════════════════════════════════════════════════════════╗
+║                  ❓ NEED HELP?                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+  📖 Full guide: Xem HUONG_DAN.md
+  🐛 Bug? → Inbox admin
+  💡 Suggestion? → Comment trên forum
+  ❓ Question? → Hỏi trực tiếp trên forum
+
+═══════════════════════════════════════════════════════════════════════
+
+                    READY? LET'S GO! 🚀
+                    
+═══════════════════════════════════════════════════════════════════════
