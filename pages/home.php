@@ -523,8 +523,21 @@ async function loadPolls() {
 
 // Load on page init
 document.addEventListener('DOMContentLoaded', () => {
+    loadFeed();
     loadLivestreams();
     loadPolls();
+    
+    // Infinite scroll with Intersection Observer
+    const sentinel = document.getElementById('scroll-sentinel');
+    if (sentinel) {
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !feedLoading && feedHasMore) {
+                feedPage++;
+                loadFeed();
+            }
+        }, { rootMargin: '200px' });
+        observer.observe(sentinel);
+    }
 });
 
 // Auto-refresh livestreams every 10 seconds
