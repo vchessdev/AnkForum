@@ -42,7 +42,7 @@ $page = $_GET['page'] ?? 'home';
 $validPages = [
     'home', 'login', 'register', 'logout',
     'profile', 'post', 'search', 'notifications',
-    'settings',
+    'settings', 'livestream', 'broadcast', 'broadcasts', 'create-poll',
 ];
 
 if (!in_array($page, $validPages)) {
@@ -55,7 +55,7 @@ if (in_array($page, ['login', 'register']) && isLoggedIn()) {
 }
 
 // These pages require login
-$protectedPages = ['notifications', 'settings'];
+$protectedPages = ['notifications', 'settings', 'broadcast'];
 if (in_array($page, $protectedPages)) {
     requireLogin();
 }

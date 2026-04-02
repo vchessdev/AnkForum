@@ -281,3 +281,30 @@ function bannerUrl(?string $banner): string {
     }
     return ltrim($banner, '/');
 }
+
+// ── Time Helpers ──────────────────────────────────────────
+
+function formatTime(string $datetime): string {
+    $timestamp = strtotime($datetime);
+    $now = time();
+    $diff = $now - $timestamp;
+    
+    if ($diff < 60) return 'Vừa xong';
+    if ($diff < 3600) return floor($diff / 60) . ' phút trước';
+    if ($diff < 86400) return floor($diff / 3600) . ' giờ trước';
+    if ($diff < 604800) return floor($diff / 86400) . ' ngày trước';
+    
+    return date('d/m/Y', $timestamp);
+}
+
+function formatDuration(int $seconds): string {
+    $hours = intval($seconds / 3600);
+    $minutes = intval(($seconds % 3600) / 60);
+    $secs = intval($seconds % 60);
+    
+    if ($hours > 0) {
+        return sprintf("%d:%02d:%02d", $hours, $minutes, $secs);
+    }
+    return sprintf("%d:%02d", $minutes, $secs);
+}
+

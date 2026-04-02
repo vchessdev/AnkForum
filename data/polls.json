@@ -1,0 +1,33 @@
+[
+    {
+        "id": "poll_f326d2266339ea87",
+        "title": "Bạn thích JavaScript hay Python?",
+        "description": "Cuộc bình chọn để tìm hiểu sở thích lập trình",
+        "options": [
+            {
+                "id": "opt_8e51d7c2f9286aba",
+                "text": "JavaScript",
+                "votes": 0
+            },
+            {
+                "id": "opt_68edeba57b8e5776",
+                "text": "Python",
+                "votes": 0
+            },
+            {
+                "id": "opt_eaec577e677a5a7c",
+                "text": "Cả hai",
+                "votes": 0
+            }
+        ],
+        "post_id": null,
+        "author_id": "test_user_1",
+        "author_name": "TestUser",
+        "author_avatar": null,
+        "voters": [],
+        "multiple_choice": false,
+        "created_at": "2026-04-02T10:28:46+07:00",
+        "updated_at": "2026-04-02T10:28:46+07:00",
+        "expires_at": null
+    }
+]

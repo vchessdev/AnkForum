@@ -59,7 +59,16 @@ $user = currentUser();
                     <img src="<?php echo avatarUrl($user['avatar']); ?>"
                         alt="<?php echo sanitize($user['username']); ?>"
                         class="avatar w-8 h-8">
+                    <?php
+                        require_once __DIR__ . '/../components/livestream-indicator.php';
+                        $userStream = getUserLivestream($user['id']);
+                        if ($userStream):
+                    ?>
+                    <span class="absolute -top-1 -right-1 px-1.5 py-0.5 bg-red-600 text-white text-xs font-bold rounded animate-pulse"
+                          style="font-size:8px;min-width:fit-content;">LIVE</span>
+                    <?php else: ?>
                     <span class="online-dot" style="width:8px;height:8px;bottom:-1px;right:-1px;"></span>
+                    <?php endif; ?>
                 </div>
                 <div class="hidden sm:block text-left">
                     <p class="text-xs font-semibold text-slate-200 leading-tight"><?php echo sanitize($user['username']); ?></p>

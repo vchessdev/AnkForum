@@ -1,0 +1,19 @@
+[
+    {
+        "id": "stream_cb50f21aa8cd195c",
+        "title": "Test Livestream",
+        "description": "Đây là một stream test",
+        "author_id": "test_user_1",
+        "author_name": "TestUser",
+        "author_avatar": null,
+        "status": "live",
+        "viewers": [],
+        "viewer_count": 5,
+        "comments": [],
+        "started_at": "2026-04-02T10:28:46+07:00",
+        "ended_at": null,
+        "duration": 0,
+        "media_url": null,
+        "thumbnail": null
+    }
+]

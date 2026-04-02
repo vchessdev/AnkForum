@@ -31,6 +31,16 @@ $user = currentUser();
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
             <span class="text-emerald-400">Bài viết</span>
         </button>
+        <button onclick="window.location.href='/?page=broadcast'"
+            class="btn-ghost flex-1 justify-center text-sm gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="1"/><path d="M21 12a9 9 0 0 1-9 9m0 0a9 9 0 0 1-9-9m9 9v-2m0-14a9 9 0 0 1 9 9"/></svg>
+            <span class="text-red-400">Livestream</span>
+        </button>
+        <button onclick="window.location.href='/?page=create-poll'"
+            class="btn-ghost flex-1 justify-center text-sm gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M3 12h18M12 3v18M6 9h12M6 15h12"/></svg>
+            <span class="text-amber-400">Poll</span>
+        </button>
     </div>
 </div>
 
@@ -102,6 +112,32 @@ $user = currentUser();
     </div>
 </div>
 <?php endif; ?>
+
+<!-- Livestream Section -->
+<div id="livestream-section" class="mb-6">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-500 animate-pulse">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6" fill="currentColor"/>
+            </svg>
+            Đang phát trực tiếp
+        </h2>
+        <a href="/?page=broadcasts" class="text-sm text-brand-400 hover:underline">Xem tất cả</a>
+    </div>
+    <div id="livestreams-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+</div>
+
+<!-- Standalone Polls Section -->
+<div id="polls-section" class="mb-6">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            📊 Poll hot
+        </h2>
+        <a href="/?page=create-poll" class="text-sm text-brand-400 hover:underline">Tạo poll</a>
+    </div>
+    <div id="polls-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+</div>
 
 <!-- Feed -->
 <div id="posts-feed" class="space-y-4">
@@ -402,5 +438,91 @@ document.getElementById('compose-form')?.addEventListener('submit', async functi
 document.getElementById('compose-modal')?.addEventListener('click', function(e) {
     if (e.target === this) this.style.display = 'none';
 });
+
+// ── Livestreams ────────────────────────────────────────────
+async function loadLivestreams() {
+    try {
+        const res = await API.get('/api/livestreams/list.php?status=live');
+        const container = document.getElementById('livestreams-container');
+        
+        if (res.streams.length === 0) {
+            document.getElementById('livestream-section').style.display = 'none';
+            return;
+        }
+        
+        container.innerHTML = res.streams.map(stream => `
+            <div class="bg-slate-800 rounded-lg overflow-hidden hover:bg-slate-700 transition cursor-pointer"
+                 onclick="window.location.href='/?page=livestream&id=${stream.id}'">
+                <div class="relative bg-black aspect-video flex items-center justify-center">
+                    <svg class="w-12 h-12 text-slate-600" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="currentColor"/>
+                    </svg>
+                    <div class="absolute top-2 right-2 bg-red-600 px-2 py-1 rounded text-xs font-bold text-white animate-pulse">
+                        LIVE
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h4 class="font-semibold text-white text-sm truncate">${escHtml(stream.title)}</h4>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 mt-1">
+                        <span>👤 ${escHtml(stream.author_name)}</span>
+                        <span>•</span>
+                        <span>👥 ${stream.viewer_count} viewers</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch(e) {
+        console.error('Error loading livestreams:', e);
+    }
+}
+
+// ── Polls ────────────────────────────────────────────────
+async function loadPolls() {
+    try {
+        const res = await API.get('/api/polls/list.php?standalone=1');
+        const container = document.getElementById('polls-container');
+        
+        if (res.polls.length === 0) {
+            document.getElementById('polls-section').style.display = 'none';
+            return;
+        }
+        
+        container.innerHTML = res.polls.slice(0, 4).map(poll => {
+            const total = poll.options.reduce((sum, opt) => sum + opt.votes, 0);
+            return `
+                <div class="bg-slate-800 rounded-lg p-4 border border-slate-700 hover:border-brand-500 transition cursor-pointer"
+                     onclick="document.getElementById('poll-${poll.id}').scrollIntoView({behavior: 'smooth'})">
+                    <h4 class="font-semibold text-white text-sm mb-2 truncate">${escHtml(poll.title)}</h4>
+                    <div class="space-y-2 mb-3">
+                        ${poll.options.slice(0, 3).map(opt => {
+                            const pct = total > 0 ? Math.round((opt.votes / total) * 100) : 0;
+                            return `
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-slate-400 truncate">${escHtml(opt.text)}</span>
+                                    <span class="text-brand-400 font-semibold">${pct}%</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                    <div class="text-xs text-slate-500 flex items-center justify-between">
+                        <span>${total} bình chọn</span>
+                        <span class="text-brand-400">Chi tiết →</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    } catch(e) {
+        console.error('Error loading polls:', e);
+    }
+}
+
+// Load on page init
+document.addEventListener('DOMContentLoaded', () => {
+    loadLivestreams();
+    loadPolls();
+});
+
+// Auto-refresh livestreams every 10 seconds
+setInterval(loadLivestreams, 10000);
 
 </script>

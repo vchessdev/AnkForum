@@ -21,6 +21,8 @@ define('USERS_FILE', DATA_PATH . '/users.json');
 define('POSTS_FILE', DATA_PATH . '/posts.json');
 define('COMMENTS_FILE', DATA_PATH . '/comments.json');
 define('NOTIFICATIONS_FILE', DATA_PATH . '/notifications.json');
+define('POLLS_FILE', DATA_PATH . '/polls.json');
+define('LIVESTREAMS_FILE', DATA_PATH . '/livestreams.json');
 
 // Upload settings
 define('MAX_UPLOAD_SIZE', 500 * 1024 * 1024); // 500MB
