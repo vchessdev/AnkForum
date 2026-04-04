@@ -71,14 +71,3 @@ function renderLivestreamCard($stream) {
     </div>
     HTML;
 }
-
-function formatDuration($seconds) {
-    $hours = intval($seconds / 3600);
-    $minutes = intval(($seconds % 3600) / 60);
-    $secs = intval($seconds % 60);
-    
-    if ($hours > 0) {
-        return sprintf("%d:%02d:%02d", $hours, $minutes, $secs);
-    }
-    return sprintf("%d:%02d", $minutes, $secs);
-}
